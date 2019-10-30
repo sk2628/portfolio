@@ -1,7 +1,6 @@
 const express = require ('express')
-const $ = require('jquery')
 const app = express()
-const PORT = process.env.PORT || 3000;
+const host = process.env.PORT || 3000;
 
 const budget = require('./models/budget');
 const bank = require('./models/bank');
