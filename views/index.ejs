@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>W10D1 HW (&copy;Steve Kang @ SEIF 2019)</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/normalize.css">
+        <link rel="stylesheet" href="/skeleton.css">
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+        
+    </head>
+    <body class="container">
+        <h1>Budgtr ALL</h1>
+        <div class="d-flex">
+            <div class="p-10 flex-fill">
+                <button onclick="location.href='/budgets/new'" id="newBtn" type="button">New Budget</button>
+            </div>
+            <div id="divAmount" class="p-2 flex-fill">
+                <% let myBankAccount = 0 %>
+                <% budgetModel.forEach((budget) => myBankAccount += parseInt(budget.amount)); %> 
+                Bank Account:  
+                <span class="
+                    <% if (myBankAccount >= 0) { %>
+                        positiveBalance 
+                    <% } else { %> 
+                        negativeBalance 
+                    <% } %> ">  
+                    <%= myBankAccount %> 
+                </span>
+            </div>
+
+        </div>
+        <table>
+            <% for (let row = 0; row < budgetModel.length; row++){ %>
+            <tr>
+                <td><%=budgetModel[row].date%></td>
+                <td><a href="/budgets/<%=row%>"><%=budgetModel[row].name%></a></td>
+                <td><%=budgetModel[row].amount%></td>
+            </tr>
+            <% } %>
+        </table>
+    </body> 
+</html>

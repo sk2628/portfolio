@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>W10D1 HW (&copy;Steve Kang @ SEIF 2019)</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/normalize.css">
+        <link rel="stylesheet" href="/skeleton.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1><%= budgetModel.name %></h1>
+            <table>
+                <thead>
+                    <td>
+                        Date
+                    </td>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        From
+                    </td>
+                    <td>
+                        Amount
+                    </td>
+                    <td>
+                        Tags
+                    </td>
+                </thead>
+                <tr>
+                    <td>
+                        <%= budgetModel.date %>
+                    </td>
+                    <td>
+                        <%= budgetModel.name %>
+                    </td>
+                    <td>
+                        <%= budgetModel.from %>
+                    </td>
+                    <td>
+                        <%= budgetModel.amount %>
+                    </td>
+                    <td>
+                        <%= budgetModel.tags %>
+                    </td>
+                </tr>
+            </table>
+            <button onclick="location.href='/budgets'" id="indexBtn" type="button">Back to Index</button>
+        </div>
+    </body> 
+</html>
